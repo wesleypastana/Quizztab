@@ -1,42 +1,6 @@
 {
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "@vercel/node"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/quizzes",
-      "destination": "/api/quizzes/index"
-    },
-    {
-      "source": "/api/quizzes/import/text",
-      "destination": "/api/quizzes/import/text"
-    },
-    {
-      "source": "/api/quizzes/import/file",
-      "destination": "/api/quizzes/import/file"
-    },
-    {
-      "source": "/api/quizzes/:id",
-      "destination": "/api/quizzes/[id]"
-    },
-    {
-      "source": "/api/videos/jobs",
-      "destination": "/api/videos/jobs/index"
-    },
-    {
-      "source": "/api/videos/jobs/:id",
-      "destination": "/api/videos/jobs/[id]"
-    },
-    {
-      "source": "/api/videos/:id/download",
-      "destination": "/api/videos/[id]/download"
-    },
-    {
-      "source": "/api/webhooks",
-      "destination": "/api/webhooks/index"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
 
