@@ -3,7 +3,7 @@ import { QuizTemplate } from '../../types/template';
 import { renderFrame, RenderContext } from '../../services/videoRenderer';
 import { Question } from '../../types/quiz';
 import { QuizConfig } from '../../types/config';
-import { VideoSettings, DEFAULT_VIDEO_SETTINGS } from '../../types/video';
+import { DEFAULT_VIDEO_SETTINGS } from '../../types/video';
 import { VIDEO_RESOLUTIONS } from '../../types/config';
 import { useLanguage } from '../../hooks/useLanguage';
 import './TemplatePreview.css';
@@ -28,7 +28,6 @@ const MOCK_CONFIG: QuizConfig = {
   optionsPerQuestion: 4,
   timerPerQuestion: 10,
   themes: [],
-  enableSound: false, // Sons removidos - não usado mais
   enableMusic: false,
   backgroundColor: '#1a1a2e',
   textColor: '#ffffff',

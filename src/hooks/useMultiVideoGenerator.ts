@@ -1,8 +1,6 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Quiz } from '../types/quiz';
 import { QuizConfig } from '../types/config';
-import { QuizTemplate } from '../types/template';
-import { useVideoGenerator } from './useVideoGenerator';
 import JSZip from 'jszip';
 
 interface QuizWithId extends Quiz {
@@ -22,17 +20,14 @@ export function useMultiVideoGenerator({
   quizzes,
   config,
   canvas,
-  template,
 }: {
   quizzes: QuizWithId[];
   config: QuizConfig;
   canvas: HTMLCanvasElement | null;
-  template?: QuizTemplate;
 }) {
   const [generationStatuses, setGenerationStatuses] = useState<Map<string, VideoGenerationStatus>>(new Map());
   const [isGeneratingAll, setIsGeneratingAll] = useState(false);
   const [allVideosReady, setAllVideosReady] = useState(false);
-  const generatorsRef = useRef<Map<string, ReturnType<typeof useVideoGenerator>>>(new Map());
 
   const updateStatus = useCallback((quizId: string, updates: Partial<VideoGenerationStatus>) => {
     setGenerationStatuses(prev => {
@@ -47,21 +42,6 @@ export function useMultiVideoGenerator({
     });
   }, []);
 
-  const generateSingleVideo = useCallback(async (quiz: QuizWithId): Promise<Blob | null> => {
-    return new Promise((resolve, reject) => {
-      updateStatus(quiz.id, { status: 'generating', progress: 0 });
-
-      // Cria um canvas temporário para este quiz
-      const tempCanvas = document.createElement('canvas');
-      const dimensions = config.videoResolution.split('x').map(Number);
-      tempCanvas.width = dimensions[0];
-      tempCanvas.height = dimensions[1];
-
-      // Cria um gerador temporário (simulado - na prática precisaríamos de uma versão que aceite canvas)
-      // Por enquanto, vamos usar uma abordagem sequencial
-      resolve(null);
-    });
-  }, [config, updateStatus]);
 
   const generateAllVideos = useCallback(async () => {
     if (quizzes.length === 0 || !canvas) return;

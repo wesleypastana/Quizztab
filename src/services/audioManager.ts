@@ -119,7 +119,7 @@ export class AudioManager {
    * Cria um som sintético usando Web Audio API
    * IMPORTANTE: Cada chamada cria um novo som, permitindo sobreposição
    */
-  private createSyntheticSound(name: string, frequency: number, duration: number, type: OscillatorType = 'sine'): void {
+  private createSyntheticSound(_name: string, frequency: number, duration: number, type: OscillatorType = 'sine'): void {
     if (!this.audioContext || !this.masterGainNode) return;
 
     const oscillator = this.audioContext.createOscillator();

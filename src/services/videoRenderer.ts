@@ -5,12 +5,10 @@ import { QuizTemplate } from '../types/template';
 import {
   drawWrappedText,
   drawRoundedRect,
-  createLinearGradient,
   applyShadow,
   clearShadow,
-  centerText,
 } from '../utils/canvasHelpers';
-import { interpolateColor, fade } from '../utils/animations';
+import { fade } from '../utils/animations';
 
 // Helper functions para manipular cores
 function lightenColor(color: string, percent: number): string {
@@ -221,7 +219,6 @@ export function renderQuestion(
   
   // Padding horizontal e vertical do badge
   const badgePaddingX = padding * 0.3; // Padding horizontal
-  const badgePaddingY = badgeHeight * 0.2; // Padding vertical (20% da altura)
   const badgeWidth = textWidth + (badgePaddingX * 2); // Largura baseada no texto + padding
   const badgeX = padding;
   const badgeRadius = borderRadius * 0.8;
@@ -270,7 +267,7 @@ export function renderAnswerOptions(
   width: number,
   height: number,
   textColor: string,
-  backgroundColor: string,
+  _backgroundColor: string,
   correctAnswerValue: string | null,
   animationProgress: number = 1,
   template?: QuizTemplate
@@ -468,7 +465,7 @@ export function renderTimer(
   totalTime: number,
   width: number,
   height: number,
-  textColor: string,
+  _textColor: string,
   template?: QuizTemplate
 ): void {
   const padding = template?.padding ?? 80;
@@ -600,7 +597,7 @@ export function renderFrame(
   animationProgress: number = 1,
   showAnswer: boolean = false
 ): RenderedVisualState {
-  const { ctx, canvas, config, settings } = context;
+  const { ctx, config, settings } = context;
   const { width, height } = settings;
 
   // Limpa o canvas completamente antes de renderizar

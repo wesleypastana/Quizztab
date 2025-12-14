@@ -1,4 +1,4 @@
-import { Quiz, Question } from '../types/quiz';
+import { Quiz } from '../types/quiz';
 import { QuizConfig } from '../types/config';
 import { QuizTemplate, DEFAULT_TEMPLATE } from '../types/template';
 import { VideoSettings, DEFAULT_VIDEO_SETTINGS } from '../types/video';
@@ -6,11 +6,6 @@ import { renderFrame, RenderContext } from './videoRenderer';
 import { VIDEO_RESOLUTIONS } from '../types/config';
 import { translations, Language } from '../i18n/translations';
 
-interface GenerationProgress {
-  progress: number;
-  status: 'generating' | 'completed' | 'error';
-  error?: string;
-}
 
 /**
  * Gera um vídeo para um quiz específico
@@ -104,7 +99,7 @@ export async function generateVideoForQuiz(
         }, 300);
       };
 
-      mediaRecorder.onerror = (event) => {
+      mediaRecorder.onerror = () => {
         reject(new Error('Erro durante a gravação'));
       };
 
