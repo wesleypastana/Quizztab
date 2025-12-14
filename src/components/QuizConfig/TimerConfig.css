@@ -1,0 +1,68 @@
+.timer-config {
+  margin-bottom: 1.5rem;
+}
+
+.timer-input-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timer-slider {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-primary);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.timer-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timer-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background: var(--accent-hover);
+}
+
+.timer-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.timer-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  background: var(--accent-hover);
+}
+
+.timer-input {
+  width: 80px;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.timer-unit {
+  color: var(--text-primary);
+  opacity: 0.7;
+  font-size: 0.875rem;
+  min-width: 35px;
+}
+

@@ -1,0 +1,108 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  right: 0;
+  height: 80px;
+  background: rgba(11, 11, 16, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2C2D33;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Theme Toggle */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: rgba(21, 22, 28, 0.6);
+  border-radius: 12px;
+  border: 1px solid #2C2D33;
+}
+
+.theme-toggle-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: #8E92A0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-icon:hover {
+  color: #FFFFFF;
+  background: rgba(127, 0, 255, 0.1);
+}
+
+.theme-toggle-icon.active {
+  background: #7F00FF;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(127, 0, 255, 0.5);
+}
+
+.theme-switch {
+  margin: 0 4px;
+}
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(21, 22, 28, 0.6);
+  border-radius: 12px;
+  border: 1px solid #2C2D33;
+  margin-right: 16px;
+}
+
+.language-button {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #8E92A0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.language-button:hover {
+  color: #FFFFFF;
+  background: rgba(127, 0, 255, 0.1);
+}
+
+.language-button.active {
+  background: #7F00FF;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(127, 0, 255, 0.5);
+}
+

@@ -1,0 +1,35 @@
+.theme-default {
+  --theme-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --theme-accent: #764ba2;
+}
+
+.theme-science {
+  --theme-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --theme-accent: #f5576c;
+}
+
+.theme-history {
+  --theme-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --theme-accent: #4facfe;
+}
+
+.theme-geography {
+  --theme-bg: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --theme-accent: #43e97b;
+}
+
+.theme-sports {
+  --theme-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --theme-accent: #fa709a;
+}
+
+.theme-entertainment {
+  --theme-bg: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  --theme-accent: #30cfd0;
+}
+
+.theme-custom {
+  --theme-bg: var(--bg-primary);
+  --theme-accent: var(--accent);
+}
+
