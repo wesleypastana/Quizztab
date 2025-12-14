@@ -1,4 +1,4 @@
-import { Search, FileText, Settings, Layout } from 'lucide-react';
+import { FileText, Settings, Layout } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/hooks/useLanguage';
 import './Sidebar.css';
@@ -30,17 +30,6 @@ export function Sidebar({ activeSection = 'import', onSectionChange }: SidebarPr
           <span className="logo-text">QUIZZTAB</span>
         </div>
 
-        {/* Search Input */}
-        <div className="sidebar-search">
-          <Search className="search-icon" size={16} />
-          <input
-            type="text"
-            placeholder={t('sidebar.search')}
-            className="search-input"
-          />
-          <div className="search-badge">F</div>
-        </div>
-
         {/* Menu Items */}
         <nav className="sidebar-nav">
           {menuItems.map((item) => {
@@ -66,3 +55,5 @@ export function Sidebar({ activeSection = 'import', onSectionChange }: SidebarPr
     </aside>
   );
 }
+
+

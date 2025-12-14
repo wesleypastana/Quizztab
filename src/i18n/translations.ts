@@ -26,6 +26,15 @@ export const translations = {
       processing: 'Processando arquivo...',
       error: 'Erro:',
       selectCsv: 'Por favor, selecione um arquivo CSV',
+      uploadFiles: 'Upload de Arquivos',
+      pasteText: 'Colar Texto CSV',
+      pasteCsvText: 'Cole seu texto CSV aqui',
+      pasteHint: 'Cole o conteúdo CSV diretamente no campo abaixo. Você pode adicionar múltiplos textos CSV.',
+      pastePlaceholder: 'pergunta,resposta_correta,opção1,opção2,opção3,opção4\nQual é a capital do Brasil?,Brasília,São Paulo,Rio de Janeiro,Brasília,Salvador\n...',
+      addAnother: 'Adicionar Outro CSV',
+      importTexts: 'Importar Textos',
+      importedQuizzes: 'Quizzes Importados',
+      questions: 'questões',
     },
     // Quiz Preview
     quizPreview: {
@@ -48,6 +57,11 @@ export const translations = {
       importQuizToStart: 'Importe um quiz para começar',
       recording: 'Gravando...',
       recordingComplete: 'Gravação concluída!',
+      quizzesImported: 'quizzes importados',
+      generateAllVideos: 'Gerar Todos os Vídeos',
+      generatingVideos: 'Gerando {current} de {total} vídeos...',
+      downloadAllVideos: 'Baixar Todos os Vídeos (ZIP)',
+      clearAllImports: 'Limpar Todas as Importações',
     },
     // Quiz Config
     quizConfig: {
@@ -108,6 +122,15 @@ export const translations = {
       processing: 'Traitement du fichier...',
       error: 'Erreur:',
       selectCsv: 'Veuillez sélectionner un fichier CSV',
+      uploadFiles: 'Télécharger Fichiers',
+      pasteText: 'Coller Texte CSV',
+      pasteCsvText: 'Collez votre texte CSV ici',
+      pasteHint: 'Collez le contenu CSV directement dans le champ ci-dessous. Vous pouvez ajouter plusieurs textes CSV.',
+      pastePlaceholder: 'question,réponse_correcte,option1,option2,option3,option4\nQuelle est la capitale du Brésil?,Brasília,São Paulo,Rio de Janeiro,Brasília,Salvador\n...',
+      addAnother: 'Ajouter Un Autre CSV',
+      importTexts: 'Importer Textes',
+      importedQuizzes: 'Quiz Importés',
+      questions: 'questions',
     },
     // Quiz Preview
     quizPreview: {
@@ -130,6 +153,11 @@ export const translations = {
       importQuizToStart: 'Importez un quiz pour commencer',
       recording: 'Enregistrement...',
       recordingComplete: 'Enregistrement terminé!',
+      quizzesImported: 'quiz importés',
+      generateAllVideos: 'Générer Toutes les Vidéos',
+      generatingVideos: 'Génération de {current} sur {total} vidéos...',
+      downloadAllVideos: 'Télécharger Toutes les Vidéos (ZIP)',
+      clearAllImports: 'Effacer Toutes les Importations',
     },
     // Quiz Config
     quizConfig: {

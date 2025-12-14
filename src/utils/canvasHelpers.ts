@@ -114,3 +114,4 @@ export function centerText(
   ctx.fillText(text, textX, y);
 }
 
+

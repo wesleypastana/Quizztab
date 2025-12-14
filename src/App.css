@@ -46,6 +46,11 @@
   flex-shrink: 0;
 }
 
+/* Quando estiver na seção de configuração, permite usar mais espaço */
+.app-sidebar-content:has(.quiz-config-form) {
+  max-width: 100%;
+}
+
 .app-sidebar-content > .app-section-card:only-child {
   flex: 0 1 auto;
 }

@@ -157,6 +157,15 @@ function App() {
     downloadBlob(zipBlob, `quizzes-${Date.now()}.zip`);
   };
 
+  const clearAllImports = () => {
+    setQuizzes([]);
+    setQuiz(null);
+    setGeneratedVideos(new Map());
+    setGenerationProgress(new Map());
+    setIsGeneratingAll(false);
+    resetVideo();
+  };
+
   return (
     <div className="app">
       <Sidebar activeSection={activeSection} onSectionChange={handleSectionChange} />
@@ -252,6 +261,15 @@ function App() {
                             >
                               {t('generation.generateNewVideo')}
                             </button>
+                            {quizzes.length > 0 && (
+                              <button
+                                className="btn btn-secondary"
+                                onClick={clearAllImports}
+                                style={{ marginTop: '8px', width: '100%' }}
+                              >
+                                {t('generation.clearAllImports')}
+                              </button>
+                            )}
                           </div>
                         </div>
                       )}
@@ -259,7 +277,7 @@ function App() {
                       {quizzes.length > 1 && (
                         <div className="multi-quiz-controls" style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #2C2D33' }}>
                           <p className="hint-text" style={{ marginBottom: '12px' }}>
-                            {quizzes.length} quizzes importados
+                            {quizzes.length} {t('generation.quizzesImported')}
                           </p>
                           
                           {!isGeneratingAll ? (
@@ -269,7 +287,7 @@ function App() {
                               disabled={!canvas || quizzes.length === 0}
                               style={{ width: '100%', marginBottom: '12px' }}
                             >
-                              Gerar Todos os Vídeos ({quizzes.length})
+                              {t('generation.generateAllVideos')} ({quizzes.length})
                             </button>
                           ) : (
                             <div style={{ marginBottom: '12px' }}>
@@ -282,19 +300,30 @@ function App() {
                                 />
                               </div>
                               <p className="hint-text" style={{ fontSize: '12px', textAlign: 'center' }}>
-                                Gerando {Array.from(generationProgress.values()).filter(p => p === 100).length} de {quizzes.length} vídeos...
+                                {t('generation.generatingVideos')
+                                  .replace('{current}', String(Array.from(generationProgress.values()).filter(p => p === 100).length))
+                                  .replace('{total}', String(quizzes.length))}
                               </p>
                             </div>
                           )}
 
                           {generatedVideos.size > 0 && generatedVideos.size === quizzes.length && (
-                            <button
-                              className="btn btn-success"
-                              onClick={downloadAllAsZip}
-                              style={{ width: '100%' }}
-                            >
-                              Baixar Todos os Vídeos (ZIP)
-                            </button>
+                            <>
+                              <button
+                                className="btn btn-success"
+                                onClick={downloadAllAsZip}
+                                style={{ width: '100%', marginBottom: '12px' }}
+                              >
+                                {t('generation.downloadAllVideos')}
+                              </button>
+                              <button
+                                className="btn btn-secondary"
+                                onClick={clearAllImports}
+                                style={{ width: '100%' }}
+                              >
+                                {t('generation.clearAllImports')}
+                              </button>
+                            </>
                           )}
                         </div>
                       )}

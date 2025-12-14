@@ -82,3 +82,4 @@ export function scale(progress: number, startScale: number = 0.8): number {
   return interpolate(startScale, 1, progress, easing.easeOut);
 }
 
+

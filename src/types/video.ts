@@ -12,3 +12,4 @@ export const DEFAULT_VIDEO_SETTINGS: VideoSettings = {
   format: 'webm',
 };
 
+

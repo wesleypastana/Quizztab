@@ -25,8 +25,8 @@ export function ThemeSelector({ selectedThemes, onThemesChange }: ThemeSelectorP
 
   return (
     <div className="theme-selector">
+      <h3 className="config-group-title">Temas</h3>
       <label>
-        <span>Temas</span>
         <small>Selecione os temas para aplicar nos vídeos</small>
       </label>
       <div className="theme-grid">
@@ -51,4 +51,5 @@ export function ThemeSelector({ selectedThemes, onThemesChange }: ThemeSelectorP
     </div>
   );
 }
+
 

@@ -1,5 +1,8 @@
 .timer-config {
-  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .timer-input-group {
@@ -65,4 +68,5 @@
   font-size: 0.875rem;
   min-width: 35px;
 }
+
 

@@ -76,3 +76,4 @@ export const DEFAULT_TEMPLATE: QuizTemplate = {
   animationSpeed: 0.5,
 };
 
+
